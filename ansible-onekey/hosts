@@ -15,12 +15,10 @@
 #192.168.150.180 name=slb-180 type=BACKUP priority=90
 
 [k8s-master]
-192.168.22.80 name=node01  order=1 
-#192.168.150.182 name=node02  order=2
-#192.168.150.183 name=node03  order=3
+192.168.22.80 name=node01  order=1
 
 [k8s-node]
-192.168.22.79 name=node02 
+192.168.22.79 name=node02
 192.168.22.112 name=node03
 
 [k8s-all:children]
