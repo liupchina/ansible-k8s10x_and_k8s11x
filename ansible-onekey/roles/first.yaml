@@ -4,10 +4,10 @@
   roles:
   - { role: basic }
 
-- hosts: slb
-  roles:
-  - { role: haproxy }
-  - { role: keepalived }
+#- hosts: slb
+#  roles:
+#  - { role: haproxy }
+#  - { role: keepalived }
 
 - hosts: k8s-all
   roles:
