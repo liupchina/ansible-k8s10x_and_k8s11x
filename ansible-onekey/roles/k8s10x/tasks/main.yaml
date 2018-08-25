@@ -17,7 +17,7 @@
   service: name=kubelet state=restarted enabled=yes  daemon_reload=yes
 
 - name: 分发配置文件
-  template: src=/etc/ansible/roles/k8s10x/templates/config10x.conf.j2  dest=/root/config10x.conf
+  template: src=/srv/ansible/roles/k8s10x/templates/config10x.conf.j2  dest=/root/config10x.conf
   when:  order  is defined
 
 
@@ -35,11 +35,11 @@
   when: (  order  is defined ) and  ( order == 1 )
 
 - name: 证书上传到/etc/ansible/roles/k8s/files/
-  fetch: src=/etc/kubernetes/pki{{ k8s_version }}.tgz  dest=/etc/ansible/roles/k8s10x/files/  flat=yes
+  fetch: src=/etc/kubernetes/pki{{ k8s_version }}.tgz  dest=/srv/ansible/roles/k8s10x/files/  flat=yes
   when: (  order  is defined ) and  ( order == 1 )         
 
 - name: 证书cp
-  copy: src=/etc/ansible/roles/k8s10x/files/pki{{ k8s_version }}.tgz dest=/etc/kubernetes/pki{{ k8s_version }}.tgz
+  copy: src=/srv/ansible/roles/k8s10x/files/pki{{ k8s_version }}.tgz dest=/etc/kubernetes/pki{{ k8s_version }}.tgz
   when: (  order  is defined ) and  ( order != 1 )
 
 - name: 解压证书

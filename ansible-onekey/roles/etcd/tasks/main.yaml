@@ -7,7 +7,7 @@
   shell: mkdir -p /var/lib/etcd
 
 - name: copy etcd.service 
-  template: src=/etc/ansible/roles/etcd/templates/etcd.service.j2  dest=/etc/systemd/system/etcd.service  mode=777
+  template: src=/srv/ansible/roles/etcd/templates/etcd.service.j2  dest=/etc/systemd/system/etcd.service  mode=777
 
 - name: 设置haproxy自启动
   service: name=etcd  state=started enabled=yes  daemon_reload=yes

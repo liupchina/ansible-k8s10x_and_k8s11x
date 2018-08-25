@@ -31,7 +31,7 @@ k8s-all
 [all:vars]
 local_images=registry.cn-hangzhou.aliyuncs.com/k8sth
 k8s_version=1.11.1
-vip=192.168.22.113
+vip=192.168.33.14
 
 
 ## green.example.com

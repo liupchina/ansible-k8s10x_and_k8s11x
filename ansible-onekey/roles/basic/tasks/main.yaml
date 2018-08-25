@@ -30,8 +30,8 @@
 - name: ulimit设置
   shell: echo "* soft nofile 65536" >> /etc/security/limits.conf && echo "* hard nofile 65536" >> /etc/security/limits.conf  && echo "* soft nproc 65536"  >> /etc/security/limits.conf && echo "* hard nproc 65536"  >> /etc/security/limits.conf && echo "* soft  memlock  unlimited"  >> /etc/security/limits.conf && echo "* hard memlock  unlimited"  >> /etc/security/limits.conf
 
-- name: 关闭selinux
-  shell: sed -i "s/^SELINUX=enforcing/SELINUX=disabled/g" /etc/sysconfig/selinux && setenforce 0 && sed -i "s/^SELINUX=enforcing/SELINUX=disabled/g" /etc/selinux/config   && sed -i "s/^SELINUX=permissive/SELINUX=disabled/g" /etc/sysconfig/selinux  && sed -i "s/^SELINUX=permissive/SELINUX=disabled/g" /etc/selinux/config   && setenforce  0 
+#- name: 关闭selinux
+#  shell: sed -i "s/^SELINUX=enforcing/SELINUX=disabled/g" /etc/sysconfig/selinux && setenforce 0 && sed -i "s/^SELINUX=enforcing/SELINUX=disabled/g" /etc/selinux/config   && sed -i "s/^SELINUX=permissive/SELINUX=disabled/g" /etc/sysconfig/selinux  && sed -i "s/^SELINUX=permissive/SELINUX=disabled/g" /etc/selinux/config   && setenforce  0 
 
   - name: hosts 分发
   template:  src=/srv/ansible/roles/basic/templates/hosts.j2  dest=/etc/hosts

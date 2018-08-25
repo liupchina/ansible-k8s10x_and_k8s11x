@@ -9,7 +9,7 @@
 #  - { role: haproxy }
 #  - { role: keepalived }
 
-#- hosts: k8s-all
-#  roles:
-#  - { role: etcd, when: order is defined }
+- hosts: k8s-all
+  roles:
+  - { role: etcd, when: order is defined }
 
